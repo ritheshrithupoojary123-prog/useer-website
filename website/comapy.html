@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHREE LAXMI INTERBLOCKS - Innovative Building Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #e8e0d5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Logo */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(120, 90, 70, 0.95);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #a87c5e, #8b5a2b);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            box-shadow: 0 0 15px rgba(168, 124, 94, 0.7);
+            animation: glow 2s infinite alternate;
+        }
+
+        .logo i {
+            font-size: 28px;
+            color: #f5f1eb;
+        }
+
+        .company-name {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(to right, #161514, #211f1d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(139, 90, 43, 0.3);
+        }
+
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #f5f1eb;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4b996;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            color: #f5f1eb;
+            cursor: pointer;
+        }
+
+        /* Sections */
+        .section {
+            min-height: 100vh;
+            padding: 100px 5% 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Home Section */
+        #home {
+            background: linear-gradient(rgba(232, 224, 213, 0.9), rgba(232, 224, 213, 0.8)), 
+                        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .home-content {
+            max-width: 900px;
+        }
+
+        .home-content h1 {
+            font-size: 48px;
+            color: #5c4033;
+            margin-bottom: 25px;
+        }
+
+        .home-content p {
+            font-size: 20px;
+            color: #5c4033;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: #8b5a2b;
+            font-weight: 700;
+        }
+
+        /* Products Section */
+        #products {
+            background-color: #d9cfc1;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            color: #5c4033;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background-color: #8b5a2b;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .products-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .product-box {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        #cement-box {
+            background-color: #c4c2c0;
+            border: 2px solid #9e9e9e;
+        }
+
+        #mud-box {
+            background-color: #b8a089;
+            border: 2px solid #8b5a2b;
+        }
+
+        .product-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        #cement-box .product-title {
+            color: #4a4a4a;
+        }
+
+        #mud-box .product-title {
+            color: #5c4033;
+        }
+
+        .product-title i {
+            margin-right: 10px;
+        }
+
+        #cement-box .product-title i {
+            color: #666;
+        }
+
+        #mud-box .product-title i {
+            color: #8b5a2b;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #ddd;
+        }
+
+        #mud-box .product-image {
+            border-color: #8b5a2b;
+        }
+
+        #cement-box .product-image {
+            border-color: #9e9e9e;
+        }
+
+        .product-image img, .product-image video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-image:hover img, .product-image:hover video {
+            transform: scale(1.05);
+        }
+
+        .product-box ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .product-box li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        #cement-box li {
+            color: #333;
+        }
+
+        #mud-box li {
+            color: #5c4033;
+        }
+
+        .admin-controls {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed rgba(0,0,0,0.2);
+            display: none;
+        }
+
+        .admin-btn {
+            background-color: #8b5a2b;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            transition: background-color 0.3s;
+            font-size: 14px;
+        }
+
+        .admin-btn:hover {
+            background-color: #6d4621;
+        }
+
+        .admin-btn i {
+            margin-right: 5px;
+        }
+
+        .admin-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #5c4033;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .admin-toggle:hover {
+            background-color: #3e2b23;
+        }
+
+        /* Gallery Section */
+        #gallery {
+            background-color: #d4b996;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 250px;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item-type {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(139, 90, 43, 0.8);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(139, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .gallery-item:hover .delete-btn {
+            display: flex;
+        }
+
+        .delete-btn:hover {
+            background-color: rgba(200, 0, 0, 0.9);
+        }
+
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(139, 90, 43, 0.8);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            font-size: 24px;
+        }
+
+        .video-play-btn:hover {
+            background-color: rgba(139, 90, 43, 1);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .add-media-container {
+            border: 2px dashed #8b5a2b;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            height: 250px;
+            background-color: rgba(139, 90, 43, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .add-media-container:hover {
+            background-color: rgba(139, 90, 43, 0.2);
+        }
+
+        .add-media-icon {
+            font-size: 48px;
+            color: #8b5a2b;
+            margin-bottom: 10px;
+        }
+
+        .add-media-text {
+            color: #5c4033;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .media-type-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .media-type-btn {
+            padding: 8px 15px;
+            background-color: #e8e0d5;
+            border: 1px solid #8b5a2b;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .media-type-btn.active {
+            background-color: #8b5a2b;
+            color: white;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #c9b8a6;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            width: 100%;
+        }
+
+        .features-box {
+            flex: 1;
+            min-width: 300px;
+            background-color: #e8e0d5;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 2px solid #b8a089;
+        }
+
+        .features-list {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+
+        .features-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #d4b996;
+            display: flex;
+            align-items: center;
+            color: #5c4033;
+        }
+
+        .features-list li i {
+            color: #8b5a2b;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            background-color: #e8e0d5;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            border: 2px solid #b8a089;
+        }
+
+        .call-btn {
+            display: inline-block;
+            background-color: #8b5a2b;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(139, 90, 43, 0.3);
+            transition: all 0.3s;
+        }
+
+        .call-btn:hover {
+            background-color: #6d4621;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 90, 43, 0.4);
+        }
+
+        .call-btn i {
+            margin-right: 10px;
+        }
+
+        /* Poster Section */
+        #poster {
+            background-color: #b8a089;
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .poster-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .poster-title {
+            font-size: 32px;
+            color: #5c4033;
+            margin-bottom: 30px;
+        }
+
+        .poster-image-container {
+            width: 100%;
+            height: 1300px;
+            margin: 0 auto 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 5px solid #e8e0d5;
+        }
+
+        .poster-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Modal for video */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-modal-content {
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .video-modal-content video {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #5c4033;
+            color: #f5f1eb;
+            text-align: center;
+            padding: 30px 5%;
+        }
+
+        .footer p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* Animations */
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px rgba(139, 90, 43, 0.7);
+            }
+            100% {
+                box-shadow: 0 0 25px rgba(139, 90, 43, 1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
+            .products-container, .contact-container {
+                flex-direction: column;
+            }
+            
+            .product-box {
+                width: 100%;
+            }
+            
+            .home-content h1 {
+                font-size: 40px;
+            }
+            
+            .poster-image-container {
+                height: 400px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(92, 64, 51, 0.95);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .home-content h1 {
+                font-size: 32px;
+            }
+            
+            .home-content p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 30px;
+            }
+            
+            .company-name {
+                font-size: 24px;
+            }
+            
+            .poster-image-container {
+                height: 300px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 100px 20px 80px;
+            }
+            
+            #gallery, #poster {
+                padding: 60px 20px;
+            }
+            
+            .home-content h1 {
+                font-size: 28px;
+            }
+            
+            .product-title {
+                font-size: 24px;
+            }
+            
+            .call-btn {
+                font-size: 18px;
+                padding: 12px 25px;
+            }
+            
+            .poster-image-container {
+                height: 250px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+            
+            .gallery-item {
+                height: 200px;
+            }
+            
+            .add-media-container {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="company-name">SHREE LAXMI INTERBLOCKS</div>
+        </div>
+        
+        <div class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#poster">Poster</a></li>
+        </ul>
+    </header>
+
+    <!-- Home Section -->
+    <section class="section" id="home">
+        <div class="home-content">
+            <h1>Building the Future with <span class="highlight">InterBlock</span></h1>
+            <p>Our mission is to revolutionize the construction industry by providing high-quality building solutions that reduce environmental impact while maximizing structural integrity and design flexibility.</p>
+            <p>At InterBlock, we believe in building not just structures, but sustainable communities for future generations.</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section" id="products">
+        <h2 class="section-title">Our Products</h2>
+        <button class="admin-toggle" id="adminToggle">Admin Mode: OFF</button>
+        <div class="products-container">
+            <!-- Cement Blocks Box -->
+            <div class="product-box" id="cement-box">
+                <h3 class="product-title"><i class="fas fa-industry"></i> Cement Blocks</h3>
+                <div class="product-image">
+                    <img src="C:\Users\User\Downloads\WhatsApp Image 2026-01-13 at 10.59.17 AM.jpg">
+                </div>
+                <p>Our premium cement blocks are engineered for strength, durability, and versatility in construction projects of all scales.</p>
+                <h4>Advantages:</h4>
+                <ul>
+                    <li>High compressive strength for structural integrity</li>
+                    <li>Excellent fire resistance and thermal insulation</li>
+                    <li>Low maintenance and long-lasting performance</li>
+                    <li>Cost-effective and readily available</li>
+                    <li>Suitable for load-bearing and partition walls</li>
+                </ul>
+                
+                <!-- Admin Controls (Hidden by default) -->
+                <div class="admin-controls" id="cement-admin-controls">
+                    <h4>Admin Controls:</h4>
+                    <input type="text" id="cement-image-url" placeholder="Enter new image URL" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #9e9e9e; border-radius: 4px;">
+                    <button class="admin-btn" id="update-cement-image"><i class="fas fa-sync-alt"></i> Update Cement Image</button>
+                </div>
+            </div>
+            
+            <!-- Mud Blocks Box -->
+            <div class="product-box" id="mud-box">
+                <h3 class="product-title"><i class="fas fa-leaf"></i> Mud Blocks</h3>
+                <div class="product-image">
+                    <img src="C:\Users\User\Downloads\mudWhatsApp Image 2026-01-13 at 10.55.37 AM.jpg" alt="Mud Blocks" id="mud-image">
+                </div>
+                <p>Our eco-friendly mud blocks combine traditional techniques with modern innovation for sustainable building solutions.</p>
+                <h4>Advantages:</h4>
+                <ul>
+                    <li>Environmentally sustainable with low carbon footprint</li>
+                    <li>Excellent thermal regulation for energy efficiency</li>
+                    <li>Natural humidity control for healthier indoor air</li>
+                    <li>Biodegradable and recyclable materials</li>
+                    <li>Aesthetically pleasing with natural textures</li>
+                </ul>
+                
+                <!-- Admin Controls (Hidden by default) -->
+                <div class="admin-controls" id="mud-admin-controls">
+                    <h4>Admin Controls:</h4>
+                    <input type="text" id="mud-image-url" placeholder="Enter new image URL" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #8b5a2b; border-radius: 4px;">
+                    <button class="admin-btn" id="update-mud-image"><i class="fas fa-sync-alt"></i> Update Mud Image</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="gallery-container">
+            <h2 class="section-title">Our Work Gallery</h2>
+            <p style="color: #5c4033; margin-bottom: 30px; font-size: 18px;">Showcasing our projects, blocks, and results with images and videos</p>
+            
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be added here dynamically -->
+                <div class="gallery-item">
+                    <div class="gallery-item-type">Image</div>
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Construction Work">
+                    <button class="delete-btn" onclick="deleteGalleryItem(this)"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-type">Image</div>
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Building Blocks">
+                    <button class="delete-btn" onclick="deleteGalleryItem(this)"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-type">Video</div>
+                    <video poster="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-worker-molding-a-clay-pot-44470-large.mp4" type="video/mp4">
+                    </video>
+                    <button class="video-play-btn" onclick="playVideo(this)"><i class="fas fa-play"></i></button>
+                    <button class="delete-btn" onclick="deleteGalleryItem(this)"><i class="fas fa-times"></i></button>
+                </div>
+                
+                <!-- Add Media Container -->
+                <div class="add-media-container" id="addMediaContainer">
+                    <i class="fas fa-plus-circle add-media-icon"></i>
+                    <p class="add-media-text">Add Image or Video</p>
+                </div>
+            </div>
+            
+            <!-- Admin Controls for Gallery -->
+            <div class="admin-controls" id="gallery-admin-controls" style="max-width: 600px; margin: 30px auto 0;">
+                <h4>Admin Controls for Gallery:</h4>
+                <div class="media-type-selector" id="mediaTypeSelector">
+                    <button class="media-type-btn active" data-type="image">Image</button>
+                    <button class="media-type-btn" data-type="video">Video</button>
+                </div>
+                <input type="text" id="media-url" placeholder="Enter image or video URL" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #8b5a2b; border-radius: 4px;">
+                <input type="text" id="thumbnail-url" placeholder="Enter thumbnail URL for video (optional)" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #8b5a2b; border-radius: 4px; display: none;">
+                <button class="admin-btn" id="add-media"><i class="fas fa-plus"></i> Add to Gallery</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <video controls id="modalVideo">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+            <div class="features-box">
+                <h3>Block Features</h3>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> All blocks are manufactured to ISO 9001 standards</li>
+                    <li><i class="fas fa-check-circle"></i> Custom sizes and shapes available upon request</li>
+                    <li><i class="fas fa-check-circle"></i> Environmentally friendly production processes</li>
+                    <li><i class="fas fa-check-circle"></i> Third-party quality assurance testing</li>
+                    <li><i class="fas fa-check-circle"></i> Technical support and consultation services</li>
+                    <li><i class="fas fa-check-circle"></i> Bulk ordering with volume discounts</li>
+                    <li><i class="fas fa-check-circle"></i> Fast and reliable delivery across the region</li>
+                    <li><i class="fas fa-check-circle"></i> 10-year warranty on structural integrity</li>
+                </ul>
+            </div>
+            
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>Have questions about our products or need a custom quote? Our team is ready to assist you with all your construction needs.</p>
+                <p><i class="fas fa-envelope"></i> info@interblock.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Construction Ave, Building City, BC 56789</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</p>
+                
+                <h3 style="margin-top: 30px;">Call Us Now</h3>
+                <a href="tel:994568129" class="call-btn">
+                    <i class="fas fa-phone"></i> 994568129
+                </a>
+                <p style="margin-top: 10px; font-size: 14px;">Click to call - Available 24/7 for emergency inquiries</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Poster Section -->
+    <section id="poster">
+        <div class="poster-container">
+            <h2 class="poster-title">Our Featured Project</h2>
+            <div class="poster-image-container">
+                <img src="C:\Users\User\Downloads\WhatsApp Image 2026-01-13 at 10.55.46 AM.jpg" alt="InterBlock Featured Project" class="poster-image" id="poster-image">
+            </div>
+            
+            <!-- Admin Controls for Poster (Hidden by default) -->
+            <div class="admin-controls" id="poster-admin-controls" style="max-width: 500px; margin: 0 auto;">
+                <h4>Admin Controls for Poster:</h4>
+                <input type="text" id="poster-image-url" placeholder="Enter new poster image URL" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #8b5a2b; border-radius: 4px;">
+                <button class="admin-btn" id="update-poster-image"><i class="fas fa-sync-alt"></i> Update Poster Image</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Thanks for visiting the InterBlock website!</p>
+        <p>Building Sustainable Futures Since 2003</p>
+        <p>&copy; 2023 InterBlock Company. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Admin mode functionality
+        let adminMode = false;
+        const adminToggle = document.getElementById('adminToggle');
+        const cementAdminControls = document.getElementById('cement-admin-controls');
+        const mudAdminControls = document.getElementById('mud-admin-controls');
+        const galleryAdminControls = document.getElementById('gallery-admin-controls');
+        const posterAdminControls = document.getElementById('poster-admin-controls');
+        
+        adminToggle.addEventListener('click', () => {
+            adminMode = !adminMode;
+            
+            if (adminMode) {
+                adminToggle.textContent = 'Admin Mode: ON';
+                adminToggle.style.backgroundColor = '#8b5a2b';
+                cementAdminControls.style.display = 'block';
+                mudAdminControls.style.display = 'block';
+                galleryAdminControls.style.display = 'block';
+                posterAdminControls.style.display = 'block';
+            } else {
+                adminToggle.textContent = 'Admin Mode: OFF';
+                adminToggle.style.backgroundColor = '#5c4033';
+                cementAdminControls.style.display = 'none';
+                mudAdminControls.style.display = 'none';
+                galleryAdminControls.style.display = 'none';
+                posterAdminControls.style.display = 'none';
+            }
+        });
+        
+        // Update cement block image
+        document.getElementById('update-cement-image').addEventListener('click', () => {
+            const newImageUrl = document.getElementById('cement-image-url').value;
+            if (newImageUrl) {
+                document.getElementById('cement-image').src = newImageUrl;
+                alert('Cement block image updated successfully!');
+                document.getElementById('cement-image-url').value = '';
+            } else {
+                alert('Please enter an image URL');
+            }
+        });
+        
+        // Update mud block image
+        document.getElementById('update-mud-image').addEventListener('click', () => {
+            const newImageUrl = document.getElementById('mud-image-url').value;
+            if (newImageUrl) {
+                document.getElementById('mud-image').src = newImageUrl;
+                alert('Mud block image updated successfully!');
+                document.getElementById('mud-image-url').value = '';
+            } else {
+                alert('Please enter an image URL');
+            }
+        });
+        
+        // Update poster image
+        document.getElementById('update-poster-image').addEventListener('click', () => {
+            const newImageUrl = document.getElementById('poster-image-url').value;
+            if (newImageUrl) {
+                document.getElementById('poster-image').src = newImageUrl;
+                alert('Poster image updated successfully!');
+                document.getElementById('poster-image-url').value = '';
+            } else {
+                alert('Please enter an image URL');
+            }
+        });
+        
+        // Gallery functionality
+        const galleryGrid = document.getElementById('galleryGrid');
+        const addMediaContainer = document.getElementById('addMediaContainer');
+        const addMediaBtn = document.getElementById('add-media');
+        const mediaUrlInput = document.getElementById('media-url');
+        const thumbnailUrlInput = document.getElementById('thumbnail-url');
+        const mediaTypeSelector = document.getElementById('mediaTypeSelector');
+        let selectedMediaType = 'image';
+        
+        // Media type selector
+        mediaTypeSelector.addEventListener('click', (e) => {
+            if (e.target.classList.contains('media-type-btn')) {
+                // Remove active class from all buttons
+                document.querySelectorAll('.media-type-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                e.target.classList.add('active');
+                
+                // Update selected media type
+                selectedMediaType = e.target.dataset.type;
+                
+                // Show/hide thumbnail input based on media type
+                if (selectedMediaType === 'video') {
+                    thumbnailUrlInput.style.display = 'block';
+                } else {
+                    thumbnailUrlInput.style.display = 'none';
+                }
+            }
+        });
+        
+        // Function to add media to gallery
+        function addMediaToGallery(mediaUrl, mediaType, thumbnailUrl = null) {
+            if (!mediaUrl) {
+                alert('Please enter a media URL');
+                return;
+            }
+            
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item';
+            
+            const typeBadge = document.createElement('div');
+            typeBadge.className = 'gallery-item-type';
+            typeBadge.textContent = mediaType.charAt(0).toUpperCase() + mediaType.slice(1);
+            
+            if (mediaType === 'image') {
+                const img = document.createElement('img');
+                img.src = mediaUrl;
+                img.alt = 'Gallery Image';
+                galleryItem.appendChild(img);
+            } else if (mediaType === 'video') {
+                const video = document.createElement('video');
+                video.poster = thumbnailUrl || 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80';
+                
+                const source = document.createElement('source');
+                source.src = mediaUrl;
+                source.type = 'video/mp4';
+                video.appendChild(source);
+                
+                galleryItem.appendChild(video);
+                
+                const playBtn = document.createElement('button');
+                playBtn.className = 'video-play-btn';
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                playBtn.onclick = function() {
+                    playVideo(this);
+                };
+                galleryItem.appendChild(playBtn);
+            }
+            
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'delete-btn';
+            deleteBtn.innerHTML = '<i class="fas fa-times"></i>';
+            deleteBtn.onclick = function() {
+                deleteGalleryItem(this);
+            };
+            
+            galleryItem.appendChild(typeBadge);
+            galleryItem.appendChild(deleteBtn);
+            
+            // Insert before the add media container
+            galleryGrid.insertBefore(galleryItem, addMediaContainer);
+            
+            mediaUrlInput.value = '';
+            thumbnailUrlInput.value = '';
+            
+            alert(`${mediaType} added to gallery successfully!`);
+            saveGalleryToStorage();
+        }
+        
+        // Function to delete media from gallery
+        function deleteGalleryItem(deleteBtn) {
+            const galleryItem = deleteBtn.parentElement;
+            if (confirm('Are you sure you want to delete this item from the gallery?')) {
+                galleryItem.remove();
+                saveGalleryToStorage();
+            }
+        }
+        
+        // Video modal functionality
+        const videoModal = document.getElementById('videoModal');
+        const modalVideo = document.getElementById('modalVideo');
+        const closeModal = document.getElementById('closeModal');
+        
+        function playVideo(playBtn) {
+            const galleryItem = playBtn.parentElement;
+            const videoElement = galleryItem.querySelector('video');
+            const videoSource = videoElement.querySelector('source').src;
+            
+            modalVideo.src = videoSource;
+            videoModal.style.display = 'flex';
+            modalVideo.play();
+        }
+        
+        closeModal.addEventListener('click', () => {
+            videoModal.style.display = 'none';
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+        });
+        
+        // Close modal when clicking outside the video
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
+                videoModal.style.display = 'none';
+                modalVideo.pause();
+                modalVideo.currentTime = 0;
+            }
+        });
+        
+        // Add media when button is clicked
+        addMediaBtn.addEventListener('click', () => {
+            const mediaUrl = mediaUrlInput.value;
+            const thumbnailUrl = thumbnailUrlInput.value;
+            addMediaToGallery(mediaUrl, selectedMediaType, thumbnailUrl);
+        });
+        
+        // Add media when Enter key is pressed in the input
+        mediaUrlInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const mediaUrl = mediaUrlInput.value;
+                const thumbnailUrl = thumbnailUrlInput.value;
+                addMediaToGallery(mediaUrl, selectedMediaType, thumbnailUrl);
+            }
+        });
+        
+        // Click add media container to focus on input
+        addMediaContainer.addEventListener('click', () => {
+            mediaUrlInput.focus();
+        });
+        
+        // Save gallery items to localStorage
+        function saveGalleryToStorage() {
+            const galleryItems = Array.from(galleryGrid.children).slice(0, -1); // Exclude add container
+            const galleryData = galleryItems.map(item => {
+                const type = item.querySelector('.gallery-item-type').textContent.toLowerCase();
+                if (type === 'image') {
+                    return {
+                        type: 'image',
+                        url: item.querySelector('img').src
+                    };
+                } else if (type === 'video') {
+                    const video = item.querySelector('video');
+                    return {
+                        type: 'video',
+                        url: video.querySelector('source').src,
+                        thumbnail: video.poster
+                    };
+                }
+            }).filter(item => item !== undefined);
+            
+            localStorage.setItem('interblockGallery', JSON.stringify(galleryData));
+        }
+        
+        // Load saved gallery items from localStorage
+        function loadGalleryFromStorage() {
+            const savedData = JSON.parse(localStorage.getItem('interblockGallery')) || [];
+            savedData.forEach(item => {
+                addMediaToGallery(item.url, item.type, item.thumbnail);
+            });
+        }
+        
+        // Load gallery on page load
+        document.addEventListener('DOMContentLoaded', loadGalleryFromStorage);
+        
+        // Sample video URLs for testing (uncomment to add sample videos):
+        // addMediaToGallery('https://assets.mixkit.co/videos/preview/mixkit-stack-of-ceramic-bricks-43700-large.mp4', 'video', 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');
+        // addMediaToGallery('https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-worker-molding-a-clay-pot-44470-large.mp4', 'video', 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');
+    </script>
+</body>
+</html>
